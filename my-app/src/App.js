@@ -39,7 +39,7 @@ class App extends Component {
           <div className="app-container container" ref={(el) => this.appContainer = el}>
             <div className="row">
               <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                <h1>Sales | Q4 2018</h1>
+                <h1>Cherryhill Walk-In Clinic</h1>
               </div>
               <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 buttons-right">
                 <Button primary={true} onClick={this.handleShare}>Share</Button>
@@ -47,35 +47,23 @@ class App extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <PanelBarContainer />
+              <div className="col-xs-6 col-sm-6 col-md-2 col-lg-2 col-xl-2">
+                <div className="patients-container">
+                  <span className="patients-number">4</span>
+                  <p>Upcoming Appointments</p>
+                </div>
+                <div className="patients-container">
+                  <span className="patients-number">20</span>
+                  <p>Patients Treated Today</p>
+                </div>
+                <div className="upcoming-patients">
+                
+                </div>
               </div>
-              <div className="col-xs-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
-                <div className="row">
-                  <div className="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-                    <DonutChartContainer />
-                  </div>
-                  <div className="col-xs-6 col-sm-6 col-md-2 col-lg-2 col-xl-2">
-                    <div className="percentage-container">
-                      <span className="percentage-number">94</span>
-                      <span className="percentage-sign">%</span>
-                      <p>CUSTOMER SATISFACTION</p>
-                    </div>
-                    <div className="percentage-container">
-                      <span className="percentage-number">89</span>
-                      <span className="percentage-sign">%</span>
-                      <p>TARGET SALES</p>
-                    </div>
-                  </div>
-                  <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <BarChartContainer />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <GridContainer />
-                  </div>
-                </div>
+            </div>
+            <div className="row">
+              <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <GridContainer />
               </div>
             </div>
             {this.state.showDialog &&
