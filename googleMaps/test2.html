@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Step 1 of Many</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #map {
+      height: 100%;
+      background-color: white;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 90%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* TODO: Step 4A1: Make a generic sidebar */
+  </style>
+</head>
+
+<body>
+  <!-- TODO: Step 4A2: Add a generic sidebar -->
+
+  <!-- Map appears here -->
+  <div id="map"></div>
+
+  <script>
+    /* Note: This example requires that you consent to location sharing when
+     * prompted by your browser. If you see the error "Geolocation permission
+     * denied.", it means you probably did not give permission for the browser * to locate you. */
+    let pos;
+    let map;
+    let bounds;
+    let infoWindow;
+    let currentInfoWindow;
+    let service;
+    let infoPane;
+    let key = "AIzaSyBIHNexVXQ8y2TSvu3IDT211yWuidcqBq4";
+    function initMap() {
+      // Initialize variables
+      bounds = new google.maps.LatLngBounds();
+      infoWindow = new google.maps.InfoWindow;
+      currentInfoWindow = infoWindow;
+      /* TODO: Step 4A3: Add a generic sidebar */
+
+      // Try HTML5 geolocation
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: pos,
+            zoom: 15
+          });
+          bounds.extend(pos);
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          infoWindow.open(map);
+          map.setCenter(pos);
+
+          /* TODO: Step 3B2, Call the Places Nearby Search */
+          // Call Places Nearby Search on user's location
+          getNearbyPlaces(pos);
+        }, () => {
+          // Browser supports geolocation, but user has denied permission
+          handleLocationError(true, infoWindow);
+        });
+      } else {
+        // Browser doesn't support geolocation
+        handleLocationError(false, infoWindow);
+      }
+    }
+
+    // Handle a geolocation error
+    function handleLocationError(browserHasGeolocation, infoWindow) {
+      // Set default location to Sydney, Australia
+      pos = { lat: -33.856, lng: 151.215 };
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: pos,
+        zoom: 15
+      });
+
+      // Display an InfoWindow at the map center
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ?
+        'Geolocation permissions denied. Using default location.' :
+        'Error: Your browser doesn\'t support geolocation.');
+      infoWindow.open(map);
+      currentInfoWindow = infoWindow;
+
+      // Call Places Nearby Search on the default location
+      getNearbyPlaces(pos);
+    }
+
+    // Perform a Places Nearby Search Request
+    function getNearbyPlaces(position) {
+      let request = {
+        location: position,
+        rankBy: google.maps.places.RankBy.PROMINENCE,
+        keyword: 'clinic',
+        type: ['health','doctor'],
+        radius: '1500',
+      };
+
+      service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, nearbyCallback);
+
+    }
+
+    // Handle the results (up to 20) of the Nearby Search
+    function nearbyCallback(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        createMarkers(results);
+      }
+      console.log(results);
+      listofplaces = []
+      for (i in results) {
+        console.log(results[i].name);
+        listofplaces.push([results[i].geometry.viewport.Ya.g,results[i].geometry.viewport.Ta.g]);
+        // listofplaces.push(results[i].vicinity);
+      }
+
+      console.log(listofplaces);
+
+      getTrafficTimes(listofplaces);
+    }
+
+
+
+    function getTrafficTimes(places) {
+
+      var service = new google.maps.DistanceMatrixService();
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          
+        }, () => {
+          // Browser supports geolocation, but user has denied permission
+          handleLocationError(true, infoWindow);
+        });
+      } else {
+        // Browser doesn't support geolocation
+        handleLocationError(false, infoWindow);
+      }
+    
+      for (i in places){
+        dest = {
+          lat: places[i][0],
+          lng: places[i][1]
+        }
+      
+        let request = {
+          origins: [{lat: pos.lat, lng: pos.lng}],
+          destinations: [dest],
+          travelMode: 'DRIVING',
+          avoidTolls: true
+        }
+
+        service.getDistanceMatrix(request,trafficCallBack);
+
+      }
+      
+    }
+
+      function trafficCallBack (response, status) {
+        if (status !== 'OK') {
+          alert('Error was: ' + status);
+        } else {
+          var originList = response.originAddresses;
+          var destinationList = response.destinationAddresses;
+          console.log(originList,destinationList,response.rows[0].elements[0].duration.text);
+          console.log(response.rows[0]);
+        }
+      }
+
+
+    function createMarkers(places) {
+      places.forEach(place => {
+        let marker = new google.maps.Marker({
+          position: place.geometry.location,
+          map: map,
+          title: place.name
+        });
+
+        bounds.extend(place.geometry.location);
+      });
+
+      map.fitBounds(bounds);
+    }
+
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIHNexVXQ8y2TSvu3IDT211yWuidcqBq4&libraries=places&callback=initMap">
+  </script>
+</body>
+
+</html>
