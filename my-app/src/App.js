@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from '@progress/kendo-react-buttons';
+import { Ripple } from '@progress/kendo-react-ripple';
+import { savePDF } from '@progress/kendo-react-pdf';
+import '@progress/kendo-theme-material/dist/all.css';
 import './App.css';
+import 'bootstrap-4-grid/css/grid.min.css';
 
 class App extends Component {
   render() {
@@ -10,9 +16,9 @@ class App extends Component {
             <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
               <h1>Sales | Q4 2018</h1>
             </div>
-            <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-              <button>Share</button>
-              <button>Export to PDF</button>
+            <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 buttons-right">
+              <Button primary={true}>Share</Button>
+              <Button>Export to PDF</Button>
             </div>
           </div>
           <div className="row">
