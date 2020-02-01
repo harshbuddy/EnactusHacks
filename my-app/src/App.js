@@ -7,10 +7,8 @@ import { Button } from '@progress/kendo-react-buttons';
 import { Ripple } from '@progress/kendo-react-ripple';
 import { savePDF } from '@progress/kendo-react-pdf';
 
-import { DonutChartContainer } from './components/DonutChartContainer';
-import { BarChartContainer } from './components/BarChartContainer';
 import { GridContainer } from './components/GridContainer';
-import { PanelBarContainer } from './components/PanelBarContainer';
+//import { PanelBarContainer } from './components/PanelBarContainer';
 
 import '@progress/kendo-theme-material/dist/all.css';
 import './App.css';
@@ -56,16 +54,12 @@ class App extends Component {
                   <span className="patients-number">20</span>
                   <p>Patients Treated Today</p>
                 </div>
-                <div className="upcoming-patients">
-                
-                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div className="patients-list">
                 <GridContainer />
               </div>
             </div>
+
             {this.state.showDialog &&
               <Dialog title={"Share this report"} onClose={this.handleShare}>
                 <p>Please enter the email address/es of the recipient/s.</p>
