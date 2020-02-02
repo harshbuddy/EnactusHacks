@@ -180,19 +180,19 @@ render() {
           dropdownStyle={styles.dropdown}
           dropdownTextStyle={{fontSize: 15}}
 
-          options={['Wharncliffe WalkIn Clinic',
-           'Canadian Cannabis Clinics London',
-            'Oxford Medical WalkIn Clinic',
-             'Travel Immunization Clinic',
-              'London Family Court Clinic',
-           'St Josephs Family Medical and Dental Centre',
-            'Good doctors London',
-             'Diabetes Education Centre',
-             'Cherryhill Foot Care',
-              'Student Health Services At Western University',
-              'Fowler Kennedy Sport Medicine Clinic',
-               'VenaCare & Skin Care Clinic',
-                'Bodystream Medical Cannabis Clinic London']
+          options={['Wharncliffe WalkIn Clinic - 6 min',
+           'Canadian Cannabis Clinics London - 6 min',
+            'Oxford Medical WalkIn Clinic - 4 min',
+             'Travel Immunization Clinic - 3 min',
+              'London Family Court Clinic - 2 min',
+           'St Josephs Family Medical and Dental Centre - 8 min',
+            'Good doctors London - 4 min',
+             'Diabetes Education Centre - 4 min',
+             'Cherryhill Foot Care - 5 min',
+              'Student Health Services At Western University - 2 min',
+              'Fowler Kennedy Sport Medicine Clinic - 5 min',
+               'VenaCare & Skin Care Clinic - 3 min ',
+                'Bodystream Medical Cannabis Clinic London - 5 min']
               }/>
 
           <TextInput
