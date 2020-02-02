@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "enactushacks-1b6b8",
+  "private_key_id": "20eecfea02a95ab6cc6ed3caebc7430c82857f49",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC0WHKJa9yZczO5\nho4fAiJOFLRj0roqnWpJUSPfQ5+Ip+7iYjQGGX3sotIk6gvVSAA3WeMfU2snlQk5\n6e5goNTo1OoQ7IblHGM9hAPGbXwIqqAbE+n4S5GVCK254CwH7+SuZrIHcB3o2DiV\nPg99C9efCIQsU7HGamKadJ7Lyyfdw1bxWZsjO+fyLJPEwwz4fZ5qxRMK7BTF46Cn\nd1ww4PpbKmUszzz/vlcnVadgb0MGS5TS4wkimz163JvsrUK6IRj65HyTw4fZ2NxL\njHCT8dNGz01KKIqmFYsBZBFEYW6OQGh/aFq7suoxou0038L+z7TW7K7x1F2ikppU\nVUO6H/+/AgMBAAECggEACS838trhyshpkFk56hP08bHV15kzwfFvKEZP/V7RERr8\nUqsnQYHeCxJMgXTDhYK7ma+j0XfK5tXza++hJDdzBsId6YUiMyjVWDZEIVoSDWu8\ntT3rL6n2XN13e3yr9JUf04HtyLmWmShQOWMfugHDljKcCJkUKxBGVUQuXuwwHsSh\nNxh8c+CdnGFydaMV8IhSOdqpVhCleQlIII0MVtO+YQGsBD1rqK2NeKBBsU7ISfJL\nnK2Zl0UaeGEsVrtZdvkUA5qcQRXuh0HpAul0DjylIkcuq6xf3oewcYa6IoBLq6rf\nC+XFEzvmXF3KJvWeSbIjAQtfWS2qtcmgeTexLczuAQKBgQDo8v1Ld5dKwvhiZE6l\nuiGAnOr3dtAnFs/Lzk6HAatWpW2Kb5sUzFboyeoasZkrSurlGtztvodNh6yYIsiS\nYF5cZLmxrkk3nktTZS+WW6MaUgPOPZjqF0u7seZ2+8ZSiKqnannqk4JlHyykcgm6\njscRfQG3xah+RSOFBzkq4STJLwKBgQDGMOom9b9A4bcavkfTdAAbrHbyx2DABk5n\nXJEj67SgZnRuSholxPuzG1LzKMlUbIOasHHeJZbfNQ5Fsrj8A+exThyRTSI6W6wx\n4zpyTCKHdXIUzCS1kOiRu6xTIgHYlqHw6lhlZzG/WFdZVSOuqDVRINp9ksBQfvkI\nz40vvl9ucQKBgGEqOYzo7So5+PDRdhyabq7+xONDo78qPLJ98zNM9vLFPdOoib87\nHGUtE4De40yzixbVBaIE/trP5KXwnEix+aoAOZRrZg7U8AZxBlBpGLc5zmyQNOAv\np1867S5kBm0WpFgAianWrWUQg8Zz6qruMwqQYc8NmyJQJGiwgp/oGTfxAoGAfIFw\nJ+eMLaNe10MgdjtSchAnbZ9JLXkIujBR0cIaaAXVMRAGWyHjiYIp2y4NRKcjCgO8\nlPUCUdjPzYNYaKG/ZQiQM8vEK+s5QuHf7rvbmUNz1pLkoNeW8y52NIeRp1ICDAn8\nXD+25eEGhs1QrEFptTyxZd/SRv9tTVat+IddBlECgYBGFN98TZO2PeX3Z6utxj6C\nqLhFY2t7ecxh+TR1ptn3mvY+fYP0M11+cHD66IzNzTaW0PQuR1+B+27ESJJARxgu\nU+jUo/bBsny2OBQt++8K7a/9eW5Xh9TErNzy16fRoWB/LY4wbTSEhJV2+7KUmrb6\nyWteMH8PPCVLpTcuNwKAvA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-l9x8q@enactushacks-1b6b8.iam.gserviceaccount.com",
+  "client_id": "108015631462786066690",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-l9x8q%40enactushacks-1b6b8.iam.gserviceaccount.com"
+}
